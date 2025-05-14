@@ -133,34 +133,41 @@ body {
     color: #dc3545;
 }
 
-/* Submit tool floating button */
+/* Submit tool floating button - IMPROVED */
 .submit-tool-floating-btn {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
+    width: 160px;  /* Increased width */
+    height: 56px;  /* Increased height */
+    border-radius: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 100;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    transition: width 0.3s;
+    z-index: 9999;  /* Higher z-index to ensure it's above all content */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);  /* Better shadow */
+    overflow: visible;  /* Changed from hidden to visible */
+    transition: all 0.3s;
+    background-color: #0d6efd;  /* Primary blue color */
+    color: white;
+    font-weight: 500;
+    padding: 0 20px;
+    text-transform: none;  /* Remove any text transformation */
 }
 
 .submit-tool-floating-btn i {
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 .submit-tool-floating-btn:hover {
-    width: 140px;
+    background-color: #0b5ed7;  /* Slightly darker blue on hover */
+    transform: translateY(-2px);  /* Subtle lift effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);  /* Enhanced shadow on hover */
+    width: 168px;  /* Slight grow effect */
 }
 
-.submit-tool-floating-btn:hover::after {
-    content: "Submit Tool";
-    white-space: nowrap;
+.submit-tool-floating-btn:focus {
+    outline: none;
 }
 
 /* Responsive adjustments */
@@ -187,7 +194,8 @@ body {
     }
     
     .submit-tool-floating-btn {
-        width: 50px;
-        height: 50px;
+        width: 140px;
+        height: 48px;
+        font-size: 0.9rem;
     }
 }
