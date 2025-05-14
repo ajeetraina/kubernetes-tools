@@ -1,0 +1,81 @@
+<!-- Submit Tool Modal -->
+<div class="modal fade" id="submit-tool-modal" tabindex="-1" aria-labelledby="submitToolModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="submitToolModalLabel">Submit a Tool via Pull Request</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle me-2"></i> To maintain quality and accuracy, all tool submissions are reviewed through GitHub Pull Requests.
+                </div>
+                
+                <h6 class="mb-3">How to Submit a Tool:</h6>
+                
+                <ol class="mb-4">
+                    <li>Fork the <a href="https://github.com/ajeetraina/kubernetes-tools" target="_blank">kubernetes-tools repository</a></li>
+                    <li>Add your tool information to the <code>scripts.js</code> file in the correct category</li>
+                    <li>Include accurate GitHub star count and other details</li>
+                    <li>Create a pull request with a clear description of the tool</li>
+                </ol>
+                
+                <div class="card">
+                    <div class="card-header bg-light">
+                        <strong>Tool Information Format</strong>
+                    </div>
+                    <div class="card-body">
+                        <pre class="bg-light p-3 code-block"><code>{
+    id: [next_available_id],
+    name: "Tool Name",
+    description: "Brief description of the tool",
+    category: "[category-key]",  // Example: cli-tools, monitoring, security
+    github_url: "https://github.com/org/repo",
+    stars: [github_star_count],
+    votes: 0
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <h6>Available Categories:</h6>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><code>cli-tools</code> - CLI Tools</li>
+                                <li><code>monitoring</code> - Monitoring & Alerting</li>
+                                <li><code>cluster-management</code> - Cluster Management</li>
+                                <li><code>logging</code> - Logging & Tracing</li>
+                                <li><code>troubleshooting</code> - Troubleshooting</li>
+                                <li><code>development</code> - Development Tools</li>
+                                <li><code>cicd</code> - CI/CD Integration</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><code>security</code> - Security Tools</li>
+                                <li><code>service-mesh</code> - Service Mesh</li>
+                                <li><code>storage</code> - Storage Providers</li>
+                                <li><code>backup</code> - Backup Tools</li>
+                                <li><code>cost</code> - Cost Optimization</li>
+                                <li><code>faas</code> - Function as a Service</li>
+                                <li><code>ai</code> - AI/ML Tools</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="https://github.com/ajeetraina/kubernetes-tools" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-github me-2"></i>Go to GitHub Repository
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Submit Tool Button -->
+<button class="btn btn-primary submit-tool-floating-btn" data-bs-toggle="modal" data-bs-target="#submit-tool-modal">
+    <i class="fas fa-plus"></i> Submit Tool
+</button>
